@@ -1,0 +1,61 @@
+body,html {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+#content {
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mv-list {
+    font-size: 12px;
+    font-family: Helvetica;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.mv-list .item {
+    padding: 5px;
+    height: 15px;
+}
+
+.mv-list .item .favicon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 5px;
+}
+
+.mv-list .item .title {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+
+.mv-list .item:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+#search {
+    width: 100%;
+    height: 25px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+

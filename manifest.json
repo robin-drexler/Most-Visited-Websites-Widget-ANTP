@@ -1,0 +1,18 @@
+{
+    "background":{
+        "scripts":["js/background.js"]
+    },
+    "version":"1.0",
+    "name":"Most Visited Widget [ANTP]",
+    "description":"Displays the most visited websites in a slick widget.",
+    "icons":{
+        "128":"icon.png"
+    },
+    "manifest_version":2,
+    "web_accessible_resources":["widget.html"],
+    "content_security_policy":"script-src 'self'; object-src 'self'",
+    "permissions":[
+        "topSites",
+        "tabs"
+    ]
+}
