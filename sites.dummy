@@ -1,0 +1,13 @@
+var sites = [
+                {url: 'https://plus.google.com', title: 'Google Plus'},
+                {url: 'https://youtube.com', title: 'Youtube'},
+                {url: 'https://mail.google.com', title: 'Google Mail'},
+                {url: 'http://jimdo.com', title: 'Jimdo'},
+                {url: 'http://blog.robin-drexler.com', title: 'Robin Drexler\'s Blog'},
+                {url: 'https://facebook.com', title: 'Welcome to Facebook - Log In, Sign Up or Learn More'},
+                {url: 'http://bleacherreport.com/', title: 'Bleacher Report | Entertaining sports news, photos and slideshows and so on'},
+                {url: 'https://github.com', title: 'Github'},
+                {url: 'https://twitter.com', title: 'Twitter'},
+                {url: 'https://drive.google.com', title: 'Google Drive'}
+
+            ]
