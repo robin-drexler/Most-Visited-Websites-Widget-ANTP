@@ -10,7 +10,7 @@
     },
     "manifest_version":2,
     "web_accessible_resources":["widget.html"],
-    "content_security_policy":"script-src 'self'; object-src 'self'",
+    "content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "permissions":[
         "topSites",
         "tabs"

@@ -15,7 +15,7 @@
     <input type="text" placeholder="Filter" id="search" ng-model="query"">
     <div class="mv-list">
         <div class="item"  ng-repeat="site in sites | filter:query">
-            <a target="_parent" ng-href="{{site.url}}">
+            <a class="link" ng-href="{{site.url}}">
                 <img class="favicon" ng-src="http://www.google.com/s2/favicons?domain={{site.faviconURL}}"></img>
                 <div class="title">{{site.title}}</div>
             </a>
