@@ -53,6 +53,9 @@ $(function () {
         url = $(this).attr('href');
 
         _gaq.push([ '_trackEvent', 'Widget', 'Click_URL' ]);
+
+        !!~url.indexOf('amazon.') && _gaq.push([ '_trackEvent', 'Widget', 'Amazon' ]);
+
         chrome.extension.sendMessage({purpose:"goto", url:url});
     });
 
