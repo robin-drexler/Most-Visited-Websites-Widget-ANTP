@@ -1,5 +1,34 @@
 var _gaq = _gaq || [];
 
+function Amazon() {
+    this.tag = 'robdresblo-21';
+    /**
+     * blatantly copied from http://stackoverflow.com/questions/5999118/add-or-update-query-string-parameter
+     * @param uri
+     * @param key
+     * @param value
+     * @return {*}
+     */
+    function updateQueryStringParameter(uri, key, value) {
+        var re = new RegExp("([?|&])" + key + "=.*?(&|$)", "i");
+        separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return uri.replace(re, '$1' + key + "=" + value + '$2');
+        }
+        else {
+            return uri + separator + key + "=" + value;
+        }
+    }
+
+    this.addTag = function (url) {
+        return updateQueryStringParameter(url, 'tag', 'robdresblo-21');
+    }
+
+    this.isAmazonURL = function (url) {
+        return !!~url.indexOf('amazon.');
+    }
+}
+
 function resize() {
     var width = $(window).width(),
         height = $(window).height();
@@ -11,7 +40,8 @@ function resize() {
 }
 
 $(function () {
-    var $search = $('#search');
+    var $search = $('#search'),
+        amazon = new Amazon();
     /**
      * Before we start implementing some fancy logic about when a user really has tried to search something
      * and be before we're doing deferring and shit, we just assume, that focusing the input expresses the
@@ -54,7 +84,10 @@ $(function () {
 
         _gaq.push([ '_trackEvent', 'Widget', 'Click_URL' ]);
 
-        !!~url.indexOf('amazon.') && _gaq.push([ '_trackEvent', 'Widget', 'Amazon' ]);
+        if (amazon.isAmazonURL(url)) {
+            url = amazon.addTag(url);
+            _gaq.push([ '_trackEvent', 'Widget', 'Amazon' ]);
+        }
 
         chrome.extension.sendMessage({purpose:"goto", url:url});
     });
