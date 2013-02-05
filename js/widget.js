@@ -21,7 +21,12 @@ function Amazon() {
     }
 
     this.addTag = function (url) {
-        return updateQueryStringParameter(url, 'tag', 'robdresblo-21');
+        var tag = 'robdresblo-21';
+
+        if (!!~url.indexOf('.com')) {
+            tag = 'robdresblo-20';
+        }
+        return updateQueryStringParameter(url, 'tag', tag);
     }
 
     this.isAmazonURL = function (url) {
@@ -77,7 +82,7 @@ $(function () {
     });
 
     $('.mv-list').on('click', 'a.link', function (e) {
-        var url;
+        var url, originalUrl, tld;
         e.preventDefault();
 
         url = $(this).attr('href');
@@ -85,8 +90,10 @@ $(function () {
         _gaq.push([ '_trackEvent', 'Widget', 'Click_URL' ]);
 
         if (amazon.isAmazonURL(url)) {
+            originalUrl = url;
             url = amazon.addTag(url);
-            _gaq.push([ '_trackEvent', 'Widget', 'Amazon' ]);
+            tld = originalUrl.split('.').pop();
+            _gaq.push([ '_trackEvent', 'Widget', 'Amazon', tld]);
         }
 
         chrome.extension.sendMessage({purpose:"goto", url:url});
