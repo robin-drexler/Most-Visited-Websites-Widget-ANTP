@@ -21,10 +21,10 @@ function Amazon() {
     }
 
     this.addTag = function (url) {
-        var tag = 'robdresblo-21';
+        var tag = 'robdresblo-20';
 
-        if (!!~url.indexOf('.com')) {
-            tag = 'robdresblo-20';
+        if (!!~url.indexOf('.de') || !!~url.indexOf('.fr') || !!~url.indexOf('.at')) {
+            tag = 'robdresblo-21';
         }
         return updateQueryStringParameter(url, 'tag', tag);
     }
@@ -93,7 +93,7 @@ $(function () {
             originalUrl = url;
             url = amazon.addTag(url);
             tld = originalUrl.split('.').pop();
-            _gaq.push([ '_trackEvent', 'Widget', 'Amazon', tld]);
+            _gaq.push([ '_trackEvent', 'Widget', 'Amazon', originalUrl]);
         }
 
         chrome.extension.sendMessage({purpose:"goto", url:url});
