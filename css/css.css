@@ -1,7 +1,9 @@
+
 body,html {
   background-color: #fff;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 #content {
@@ -14,15 +16,20 @@ a {
 }
 
 .mv-list {
-    font-size: 12px;
-    font-family: Helvetica;
     overflow-y: scroll;
     height: 100%;
 }
 
 .mv-list .item {
-    padding: 5px;
+    padding: 9px;
     height: 15px;
+    border-bottom: 1px solid rgba(216, 216, 216, 1);
+    cursor: pointer;
+}
+
+.mv-list .item:hover{
+    border-bottom-width: 3px;
+    background-color: rgba(216, 216, 216, .2);
 }
 
 .mv-list .item .favicon {
@@ -38,24 +45,18 @@ a {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 14px;
+    line-height: 16px;
 
-}
-
-
-.mv-list .item:nth-child(even) {
-    background-color: #dcdcdc;
 }
 
 #search {
     width: 100%;
-    height: 25px;
+    height: 30px;
     border: none;
     outline: none;
-    font-size: 14px;
+    font-size: 18px;
+    padding: 10px;
 }
-
-
-tr:nth-child(even) {background: #CCC}
-tr:nth-child(odd) {background: #FFF}
 
 

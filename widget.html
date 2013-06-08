@@ -7,12 +7,13 @@
     <script type="text/javascript" src="js/Controller/MostVisitedController.js"></script>
     <script type="text/javascript" src="js/widget.js"></script>
     <link rel="stylesheet" href="css/css.css" type="text/css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-controller="MostVisitedController">
 
 <div id="content">
-    <input autocomplete="off" type="text" placeholder="Filter" id="search" ng-model="query"">
+    <input autocomplete="off" type="text" placeholder="Search" id="search" ng-model="query" class="search">
     <div class="mv-list">
         <div class="item"  ng-repeat="site in sites | filter:query">
             <a class="link" ng-href="{{site.url}}">

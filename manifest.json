@@ -2,9 +2,9 @@
     "background":{
         "scripts":["js/background.js"]
     },
-    "version":"2013.2.1",
-    "name":"Most Visited Websites Widget [ANTP]",
-    "description":"Displays the most visited websites in a widget.",
+    "version":"2013.6.8",
+    "name":"Top Sites Widget [ANTP]",
+    "description":"Displays your top sites in a widget.",
     "icons":{
         "128":"icon.png"
     },
